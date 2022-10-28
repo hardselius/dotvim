@@ -149,21 +149,43 @@ enddef
 
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
+    setlocal tagfunc=lsp#lsp#TagFunc
     setlocal updatetime=100
 enddef
 
-var lspServers = []
-def AddLspServer(name: string, filetypes: list<string>, args: list<string>, syncInit: bool)
-    if executable(name)
-	var path = trim(system("which " .. name))
-	add(lspServers, { filetype: filetypes, path: path, args: args, syncInit: syncInit })
-    endif
+var lspServers = [
+    {
+	name: 'rust-analyzer',
+	filetype: ['rust'],
+	args: [],
+	syncInit: true,
+    },
+    {
+	name: 'jsonnet-language-server',
+	filetype: ['jsonnet', 'libsonnet'],
+	args: [],
+    },
+    {
+	name: 'vim-language-server',
+	filetype: ['vim'],
+	args: ['--stdio'],
+    },
+]
+var servers = []
+
+def RegisterLspServers()
+    for server in lspServers
+	if executable(server.name)
+	    var path = trim(system("which " .. server.name))
+	    server.path = path
+	    add(servers, server)
+	endif
+    endfor
 enddef
 
-call AddLspServer('rust-analyzer', ['rust'], [], true)
-
 call LspOptionsSet({ noNewLineInCompletion: true })
-call LspAddServer(lspServers)
+call RegisterLspServers()
+call LspAddServer(servers)
 
 augroup LSP
     autocmd!
