@@ -141,6 +141,7 @@ packadd matchit
 packadd lsp
 packadd vim-commentary
 packadd vim-surround
+packadd vim-nix
 
 def FindExecutable(name: string): string
     var path = trim(system("which " .. name))
