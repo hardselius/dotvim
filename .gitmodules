@@ -1,0 +1,9 @@
+[submodule "pack/plugins/opt/lsp"]
+	path = pack/plugins/opt/lsp
+	url = https://github.com/yegappan/lsp.git
+[submodule "pack/plugins/opt/vim-commentary"]
+	path = pack/plugins/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "pack/plugins/opt/vim-surround"]
+	path = pack/plugins/opt/vim-surround
+	url = https://github.com/tpope/vim-surround.git
