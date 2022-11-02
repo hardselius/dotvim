@@ -206,3 +206,6 @@ augroup LSP
     nmap <buffer> ]g         <cmd>LspDiagNext\|LspDiagCurrent<CR>
     nmap <buffer> <leader>k  <cmd>LspHover<CR>
 augroup END
+
+# slate's MatchParen is horrible and confusing.
+hi MatchParen term=reverse ctermfg=220 ctermbg=16 guifg=#ffd700 guibg=#000000
