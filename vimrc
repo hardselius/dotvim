@@ -141,6 +141,7 @@ packadd matchit
 packadd lsp
 packadd vim-commentary
 packadd vim-hcl
+packadd vim-repeat
 packadd vim-surround
 packadd vim-nix
 
