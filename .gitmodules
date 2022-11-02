@@ -10,3 +10,6 @@
 [submodule "pack/plugins/opt/vim-nix"]
 	path = pack/plugins/opt/vim-nix
 	url = https://github.com/LnL7/vim-nix.git
+[submodule "pack/plugins/opt/vim-hcl"]
+	path = pack/plugins/opt/vim-hcl
+	url = https://github.com/jvirtanen/vim-hcl.git
