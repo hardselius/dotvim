@@ -3,7 +3,7 @@ vim9script
 # backup, undo and swap with XDG support
 
 if empty($XDG_CACHE_HOME)
-    $XDG_CACHE_HOME = $HOME."/.cache"
+    $XDG_CACHE_HOME = $HOME .. '/.cache'
 endif
 
 set backupdir=$XDG_CACHE_HOME/vim/backup | call mkdir(&backupdir, 'p', 0700)
