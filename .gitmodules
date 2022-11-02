@@ -10,9 +10,9 @@
 [submodule "pack/plugins/opt/vim-nix"]
 	path = pack/plugins/opt/vim-nix
 	url = https://github.com/LnL7/vim-nix.git
-[submodule "pack/plugins/opt/vim-hcl"]
-	path = pack/plugins/opt/vim-hcl
-	url = https://github.com/jvirtanen/vim-hcl.git
 [submodule "pack/plugins/opt/vim-repeat"]
 	path = pack/plugins/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "pack/plugins/opt/vim-terraform"]
+	path = pack/plugins/opt/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

@@ -140,9 +140,9 @@ g:netrw_localrmdir = 'rm -r'
 packadd matchit
 packadd lsp
 packadd vim-commentary
-packadd vim-hcl
 packadd vim-repeat
 packadd vim-surround
+packadd vim-terraform
 packadd vim-nix
 
 def FindExecutable(name: string): string
