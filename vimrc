@@ -173,6 +173,11 @@ var lspServers = [
 	filetype: ['vim'],
 	args: ['--stdio'],
     },
+    {
+	name: 'rnix-lsp',
+	filetype: ['nix'],
+	args: [],
+    }
 ]
 var servers = []
 
