@@ -177,7 +177,12 @@ var lspServers = [
 	name: 'rnix-lsp',
 	filetype: ['nix'],
 	args: [],
-    }
+    },
+    {
+	name: 'bash-language-server',
+	filetype: ['bash', 'sh'],
+	args: ['start'],
+    },
 ]
 var servers = []
 
