@@ -191,7 +191,12 @@ def RegisterLspServers()
     endfor
 enddef
 
-call LspOptionsSet({ noNewLineInCompletion: true })
+call LspOptionsSet({
+    autoComplete: false,
+    noNewLineInCompletion: true,
+    showDiagInPopup: false,
+    showDiagOnStatusLine: true
+})
 call RegisterLspServers()
 call LspAddServer(servers)
 
