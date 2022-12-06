@@ -139,6 +139,7 @@ g:netrw_localrmdir = 'rm -r'
 
 packadd matchit
 packadd lsp
+packadd tabular
 packadd vim-commentary
 packadd vim-repeat
 packadd vim-surround

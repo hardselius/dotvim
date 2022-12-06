@@ -16,3 +16,6 @@
 [submodule "pack/plugins/opt/vim-terraform"]
 	path = pack/plugins/opt/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "pack/plugins/opt/tabular"]
+	path = pack/plugins/opt/tabular
+	url = https://github.com/godlygeek/tabular.git
