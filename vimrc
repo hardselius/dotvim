@@ -146,16 +146,33 @@ packadd vim-surround
 packadd vim-terraform
 packadd vim-nix
 
-def FindExecutable(name: string): string
-    var path = trim(system("which " .. name))
-    return strlen(path) <= 0 ? name : path
-enddef
-
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
     setlocal tagfunc=lsp#lsp#TagFunc
     setlocal updatetime=100
+
+    nnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
+    vnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
+    nnoremap <buffer> ga         <cmd>LspCodeAction<CR>
+    nnoremap <buffer> gd         <cmd>LspGotoDefinition<CR>
+    nnoremap <buffer> gs         <cmd>LspSymbolSearch<CR>
+    nnoremap <buffer> gr         <cmd>LspReferences<CR>
+    nnoremap <buffer> gi         <cmd>LspGotoImpl<CR>
+    nnoremap <buffer> <leader>gt <cmd>LspTypeDef<CR>
+    nnoremap <buffer> <leader>R  <cmd>LspRename<CR>
+    nnoremap <buffer> [g         <cmd>LspDiagPrev\|LspDiagCurrent<CR>
+    nnoremap <buffer> ]g         <cmd>LspDiagNext\|LspDiagCurrent<CR>
+    nnoremap <buffer> <leader>k  <cmd>LspHover<CR>
 enddef
+
+call LspOptionsSet({
+    autoComplete: false,
+    noNewLineInCompletion: true,
+    showDiagInPopup: false,
+    showDiagOnStatusLine: true,
+    showInlayHints: true,
+    showSignature: false,
+})
 
 var lspServers = [
     {
@@ -185,6 +202,7 @@ var lspServers = [
 	args: ['start'],
     },
 ]
+
 var servers = []
 
 def RegisterLspServers()
@@ -197,31 +215,13 @@ def RegisterLspServers()
     endfor
 enddef
 
-call LspOptionsSet({
-    autoComplete: false,
-    noNewLineInCompletion: true,
-    showDiagInPopup: false,
-    showDiagOnStatusLine: true
-})
 call RegisterLspServers()
+
 call LspAddServer(servers)
 
 augroup LSP
     autocmd!
     autocmd User LspAttached call OnLspAttach()
-
-    nnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
-    vnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
-    nnoremap <buffer> ga         <cmd>LspCodeAction<CR>
-    nnoremap <buffer> gd         <cmd>LspGotoDefinition<CR>
-    nnoremap <buffer> gs         <cmd>LspSymbolSearch
-    nnoremap <buffer> gr         <cmd>LspReferences<CR>
-    nnoremap <buffer> gi         <cmd>LspGotoImpl<CR>
-    nnoremap <buffer> <leader>gt <cmd>LspTypeDef<CR>
-    nnoremap <buffer> <leader>R  <cmd>LspRename<CR>
-    nnoremap <buffer> [g         <cmd>LspDiagPrev\|LspDiagCurrent<CR>
-    nnoremap <buffer> ]g         <cmd>LspDiagNext\|LspDiagCurrent<CR>
-    nnoremap <buffer> <leader>k  <cmd>LspHover<CR>
 augroup END
 
 # slate's MatchParen is horrible and confusing.
