@@ -170,7 +170,6 @@ call LspOptionsSet({
     noNewLineInCompletion: true,
     showDiagInPopup: false,
     showDiagOnStatusLine: true,
-    showInlayHints: true,
     showSignature: false,
 })
 
