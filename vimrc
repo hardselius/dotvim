@@ -89,8 +89,8 @@ nnoremap [l :lprevious<CR>
 nnoremap ]l :lnext<CR>
 
 # search and replace
-nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
-nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
+nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>//g<left><left>
+nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>//g<left><left>
 
 # global commands
 nnoremap <Leader>g :g//#<Left><Left>
