@@ -120,7 +120,9 @@ cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>?<C-
 command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
 # sudo write
-command! SudoW exec 'silent! write !sudo tee % >/dev/null' | edit!
+if executable('sudo')
+    command! W exec 'silent! write !sudo tee % >/dev/null' | edit!
+endif
 
 # portable git blame
 def GB(start: number, end: number): list<string>
