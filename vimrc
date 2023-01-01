@@ -123,7 +123,11 @@ command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 command! SudoW exec 'silent! write !sudo tee % >/dev/null' | edit!
 
 # portable git blame
-command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h')) . " blame -L <line1>,<line2> " . expand('%:t')), "\n")
+def GB(start: number, end: number): list<string>
+    var cmd = "git -C " .. shellescape(expand('%:p:h')) .. " blame -L " .. start .. "," .. end .. " " .. expand('%:t')
+    return systemlist(cmd)
+enddef
+command! -range GB echo join(GB(<line1>, <line2>), "\n")
 
 # location list :global
 set errorformat^=%f:%l:%c\ %m
