@@ -179,6 +179,11 @@ call LspOptionsSet({
 
 var lspServers = [
     {
+	name: 'clangd',
+	filetype: ['c', 'cpp'],
+	args: ['--background-index'],
+    },
+    {
 	name: 'rust-analyzer',
 	filetype: ['rust'],
 	args: [],
