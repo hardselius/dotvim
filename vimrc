@@ -105,10 +105,8 @@ nnoremap [b :<C-U>set background=<C-R>=&background == "dark" ? "light" : "dark"<
 def Grep(...args: list<string>): string
     return system(join([&grepprg] + [expandcmd(join(args, ' '))], ' '))
 enddef
-
 command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
 command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<f-args>)
-
 cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() ==# 'grep')  ? 'Grep'  : 'grep'
 cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() ==# 'lgrep') ? 'LGrep' : 'lgrep'
 
@@ -130,11 +128,6 @@ def GB(start: number, end: number): list<string>
     return systemlist(cmd)
 enddef
 command! -range GB echo join(GB(<line1>, <line2>), "\n")
-
-# location list :global
-set errorformat^=%f:%l:%c\ %m
-command! -nargs=1 Global lgetexpr filter(map(getline(1,'$'), {key, val -> expand("%") . ":" . (key + 1) . ":1 " . val }), { idx, val -> val =~ <q-args> })
-nnoremap <Leader>G :Global
 
 # create directories
 nnoremap <Leader>m :!mkdir -p %:h<CR>
