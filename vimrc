@@ -172,7 +172,7 @@ call LspOptionsSet({
     showSignature: false,
 })
 
-var lspServers = [
+var lspServers: list<dict<any>> = [
     {
 	name: 'clangd',
 	filetype: ['c', 'cpp'],
@@ -206,7 +206,7 @@ var lspServers = [
     },
 ]
 
-var servers = []
+var servers: list<dict<any>> = []
 
 def RegisterLspServers()
     for server in lspServers
