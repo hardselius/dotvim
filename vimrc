@@ -45,6 +45,8 @@ set shiftwidth=4
 &softtabstop = &shiftwidth
 
 colorscheme slate
+# slate's MatchParen is horrible and confusing.
+hi MatchParen term=reverse ctermfg=220 ctermbg=16 guifg=#ffd700 guibg=#000000
 
 # use ripgrep if it's there
 if executable('rg')
@@ -66,9 +68,6 @@ augroup END
 
 # files
 nnoremap <Leader>f :find *
-nnoremap <Leader>s :sfind *
-nnoremap <Leader>v :vertical sfind *
-nnoremap <Leader>t :tabfind *
 
 # buffers
 nnoremap <Leader>b :buffer *
@@ -77,10 +76,6 @@ nnoremap <Leader>a :buffer#<CR>
 # command-line
 cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
-
-# tags
-nnoremap <Leader>j :tjump /
-nnoremap <Leader>p :ptjump /
 
 # location/quickfix entries
 nnoremap [q :cprevious<CR>
@@ -226,6 +221,3 @@ augroup LSP
     autocmd!
     autocmd User LspAttached call OnLspAttach()
 augroup END
-
-# slate's MatchParen is horrible and confusing.
-hi MatchParen term=reverse ctermfg=220 ctermbg=16 guifg=#ffd700 guibg=#000000
