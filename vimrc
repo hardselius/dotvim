@@ -205,8 +205,8 @@ var servers: list<dict<any>> = []
 
 def RegisterLspServers()
     for server in lspServers
-	if executable(server.name)
-	    var path = trim(system("which " .. server.name))
+	var path = exepath(server.name)
+	if path != ""
 	    server.path = path
 	    add(servers, server)
 	endif
