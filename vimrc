@@ -44,9 +44,7 @@ set wildmenu
 set shiftwidth=4
 &softtabstop = &shiftwidth
 
-colorscheme slate
-# slate's MatchParen is horrible and confusing.
-hi MatchParen term=reverse ctermfg=220 ctermbg=16 guifg=#ffd700 guibg=#000000
+colorscheme jellybeans
 
 # use ripgrep if it's there
 if executable('rg')
