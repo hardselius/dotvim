@@ -178,6 +178,11 @@ var lspServers: list<dict<any>> = [
 	args: ['--background-index'],
     },
     {
+	name: 'clojure-lsp',
+	filetype: ['clojure'],
+	args: [],
+    },
+    {
 	name: 'rust-analyzer',
 	filetype: ['rust'],
 	args: [],
