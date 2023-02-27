@@ -125,6 +125,12 @@ command! -range GB echo join(GB(<line1>, <line2>), "\n")
 # create directories
 nnoremap <Leader>m :!mkdir -p %:h<CR>
 
+# fuzzy
+import autoload 'fuzzy.vim'
+nnoremap <leader>B <scriptcmd>fuzzy.Buffer()<CR>
+nnoremap <leader>F <scriptcmd>fuzzy.FileTree()<CR>
+nnoremap <leader>G <scriptcmd>fuzzy.GitFile()<CR>
+
 # plugins
 g:netrw_liststyle = 3
 g:netrw_localrmdir = 'rm -r'
