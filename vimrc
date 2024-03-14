@@ -208,6 +208,11 @@ var lspServers: list<dict<any>> = [
 	filetype: ['bash', 'sh'],
 	args: ['start'],
     },
+    {
+	name: 'typescript-language-server',
+	filetype: ['javascript', 'typescript'],
+	args: ['--stdio'],
+    }
 ]
 
 var servers: list<dict<any>> = []
