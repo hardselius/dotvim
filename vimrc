@@ -44,7 +44,7 @@ set wildmenu
 set shiftwidth=4
 &softtabstop = &shiftwidth
 
-colorscheme jellybeans
+colorscheme atelier_forest_light
 
 # use ripgrep if it's there
 if executable('rg')
@@ -138,11 +138,13 @@ g:netrw_localrmdir = 'rm -r'
 packadd matchit
 packadd lsp
 packadd tabular
+packadd vim-colortemplate
 packadd vim-commentary
 packadd vim-repeat
 packadd vim-surround
 packadd vim-terraform
 packadd vim-nix
+packadd onedark.vim
 
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
@@ -199,9 +201,16 @@ var lspServers: list<dict<any>> = [
 	args: ['--stdio'],
     },
     {
-	name: 'rnix-lsp',
+	name: 'nil',
 	filetype: ['nix'],
 	args: [],
+	initializationOptions: {
+	    nil: {
+		formatting: {
+		    command: ['nixpkgs-fmt']
+		}
+	    }
+	}
     },
     {
 	name: 'bash-language-server',
@@ -212,7 +221,7 @@ var lspServers: list<dict<any>> = [
 	name: 'typescript-language-server',
 	filetype: ['javascript', 'typescript'],
 	args: ['--stdio'],
-    }
+    },
 ]
 
 var servers: list<dict<any>> = []

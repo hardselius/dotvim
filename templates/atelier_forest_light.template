@@ -1,0 +1,457 @@
+Full name: Atelier Forest Light
+Short name: atelier_forest_light
+Author: Martin Hardselius <martin@hardselius.dev>
+
+; Common linked groups {{{
+CurSearch                  -> Search
+CursorLineFold             -> FoldColumn
+CursorLineSign             -> SignColumn
+EndOfBuffer                -> NonText
+PmenuExtra                 -> Pmenu
+PmenuExtraSel              -> PmenuSel
+PmenuKind                  -> Pmenu
+PmenuKindSel               -> PmenuSel
+PreCondit                  -> PreProc
+QuickFixLine               -> Search
+SpecialComment             -> Special
+helpBacktick               -> Ignore
+helpBar                    -> Ignore
+helpBoolean                -> Boolean
+helpCharacter              -> Character
+helpCommand                -> Comment
+helpComment                -> Comment
+helpConditional            -> Conditional
+helpConstant               -> Constant
+helpDebug                  -> Debug
+helpDefine                 -> Define
+helpDelimiter              -> Delimiter
+helpDeprecated             -> Todo
+helpDiffAdded              -> Added
+helpDiffChanged            -> Changed
+helpDiffRemoved            -> Removed
+helpError                  -> Error
+helpExample                -> Comment
+helpException              -> Exception
+helpFloat                  -> Float
+helpFunction               -> Function
+helpHeader                 -> PreProc
+helpHeadline               -> Statement
+helpHyperTextEntry         -> String
+helpHyperTextJump          -> Identifier
+helpIdentifier             -> Identifier
+helpIgnore                 -> Ignore
+helpInclude                -> Include
+helpKeyword                -> Keyword
+helpLabel                  -> Label
+helpMacro                  -> Macro
+helpNotVi                  -> Special
+helpNote                   -> Todo
+helpNumber                 -> Number
+helpOperator               -> Operator
+helpOption                 -> Type
+helpPreCondit              -> PreProc
+helpPreProc                -> PreProc
+helpRepeat                 -> Repeat
+helpSectionDelim           -> PreProc
+helpSpecial                -> Special
+helpSpecialChar            -> SpecialChar
+helpSpecialComment         -> Special
+helpStar                   -> Ignore
+helpStatement              -> Statement
+helpStorageClass           -> StorageClass
+helpString                 -> String
+helpStructure              -> Structure
+helpTag                    -> Tag
+helpTodo                   -> Todo
+helpType                   -> Type
+helpTypedef                -> Typedef
+helpURL                    -> String
+helpUnderlined             -> Underlined
+helpVim                    -> Identifier
+helpWarning                -> Todo
+; }}}
+
+Background: light
+
+; Color palette {{{
+Color: base00 #f1efee ~
+Color: base01 #e6e2e0 ~
+Color: base02 #a8a19f ~
+Color: base03 #9c9491 ~
+Color: base04 #766e6b ~
+Color: base05 #68615e ~
+Color: base06 #2c2421 ~
+Color: base07 #1b1918 ~
+Color: base08 #f22c40 ~
+Color: base09 #df5320 ~
+Color: base0A #c38418 ~
+Color: base0B #7b9726 ~
+Color: base0C #3d97b8 ~
+Color: base0D #407ee7 ~
+Color: base0E #6666ea ~
+Color: base0F #c33ff3 ~
+
+; }}}
+
+
+Variant: gui 256
+
+; Highlight groups {{{
+Normal                     base05  base00
+Added                      base0B  base00
+Bold                       base05  base00   bold
+Boolean                    base09  base00
+Character                  base08  base00
+ColorColumn                base05  base01
+ColortemplateInfoBg        base05  base00
+ColortemplateInfoFg        base05  base00
+ColortemplateInfoSp        base05  base00
+Comment                    base03  base00
+Conceal                    base0D  base00
+Conditional                base0E  base00
+Constant                   base09  base00
+Cursor                     base00  base05
+CursorColumn               base05  base01
+CursorLine                 base05  base01
+CursorLineNr               base03  base01   gui=bold term=underline
+Debug                      base08  base00
+Define                     base0E  base00
+Delimiter                  base0F  base00
+DiffAdd                    base0B  base01
+DiffAdded                  base0B  base00
+DiffChange                 base03  base01
+DiffDelete                 base08  base01   gui=bold
+DiffFile                   base08  base00
+DiffLine                   base0D  base00
+DiffNewFile                base0B  base00
+DiffRemoved                base08  base00
+DiffText                   base0D  base01   bold
+Directory                  base0D  base00
+Error                      base00  base08
+ErrorMsg                   base08  base00
+Exception                  base08  base00
+Float                      base09  base00
+FoldColumn                 base0C  base01
+Folded                     base03  base01
+Function                   base0D  base00
+GitGutterAdd               base0B  base01
+GitGutterChange            base0D  base01
+GitGutterChangeDelete      base0E  base01
+GitGutterDelete            base08  base01
+Identifier                 base08  base00
+Ignore                     base00  base00
+IncSearch                  base01  base09
+Include                    base0D  base00
+Italic                     base05  base00
+Keyword                    base0E  base00
+Label                      base0A  base00
+LineNr                     base02  base01
+LineNrAbove                base05  base00
+LineNrBelow                base05  base00
+Macro                      base08  base00
+MatchParen                 base00  base03
+ModeMsg                    base0B  base00   bold
+MoreMsg                    base0B  base00   gui=bold
+MsgArea                    base05  base00
+NERDTreeDirSlash           base0D  base00
+NERDTreeExecFile           base05  base00
+Noise                      base01  base00
+NonText                    base03  base00   gui=bold
+Number                     base09  base00
+Operator                   base05  base00
+Pmenu                      base04  base01
+PmenuSel                   base01  base04
+PreProc                    base0A  base00
+Question                   base0D  base00   gui=bold
+Removed                    base08  base00
+Repeat                     base0A  base00
+Search                     base06  base0A
+SignColumn                 base03  base01
+SignifySignAdd             base0B  base01
+SignifySignChange          base0D  base01
+SignifySignDelete          base08  base01
+Special                    base0C  base00
+SpecialChar                base0F  base00
+SpecialKey                 base03  base00
+SpellBad                   base05  base00   undercurl
+SpellCap                   base05  base00   undercurl
+SpellLocal                 base05  base00   undercurl
+SpellRare                  base05  base00   undercurl
+Statement                  base08  base00   gui=bold
+StatusLine                 base04  base02
+StatusLineNC               base03  base01
+StatusLineTerm             base00  base0B   bold
+StatusLineTermNC           base00  base0B
+StorageClass               base0A  base00
+String                     base0B  base00
+Structure                  base0E  base00
+TabLine                    base03  base01
+TabLineFill                base03  base01
+TabLineSel                 base0B  base01
+Tag                        base0A  base00
+Title                      base0D  base00
+Todo                       base0A  base01
+TooLong                    base08  base00
+ToolbarButton              base00  base04   bold
+Type                       base0A  base00
+Typedef                    base0A  base00
+Underlined                 base08  base00   underline
+VertSplit                  base00  base00
+VisualNOS                  base08  base00   bold,underline
+WarningMsg                 base08  base00
+WildMenu                   base08  base0A
+cOperator                  base0C  base00
+cPreCondit                 base0E  base00
+csAttribute                base0A  base00
+csClass                    base0A  base00
+csContextualStatement      base0E  base00
+csModifier                 base0E  base00
+csNewDecleration           base08  base00
+csType                     base08  base00
+csUnspecifiedStatement     base0D  base00
+cssBraces                  base01  base00
+cssClassName               base0E  base00
+cssColor                   base0C  base00
+gitCommitOverflow          base08  base00
+gitCommitSummary           base05  base00
+helpGraphic                base05  base00
+helpLeadBlank              base05  base00
+helpNormal                 base05  base00
+htmlBold                   base0A  base00
+htmlEndTag                 base01  base00
+htmlItalic                 base0E  base00
+htmlTag                    base01  base00
+javaScript                 base05  base00
+javaScriptBraces           base05  base00
+javaScriptNumber           base09  base00
+jsBuiltins                 base0A  base00
+jsClassDefinition          base0A  base00
+jsClassFuncName            base0D  base00
+jsClassMethodType          base0E  base00
+jsExceptions               base0A  base00
+jsFuncCall                 base0D  base00
+jsFuncName                 base0D  base00
+jsFunction                 base0E  base00
+jsGlobalNodeObjects        base0A  base00
+jsGlobalObjects            base0A  base00
+jsOperator                 base0D  base00
+jsRegexpString             base0C  base00
+jsReturn                   base0E  base00
+jsStatement                base0E  base00
+jsThis                     base08  base00
+mailEmail                  base0D  base00
+mailQuoted1                base0A  base00
+mailQuoted2                base0B  base00
+mailQuoted3                base0E  base00
+mailQuoted4                base0C  base00
+mailQuoted5                base0D  base00
+mailQuoted6                base0A  base00
+mailURL                    base0D  base00
+markdownCode               base0B  base00
+markdownCodeBlock          base0B  base00
+markdownError              base05  base00
+markdownHeadingDelimiter   base0D  base00
+phpComparison              base05  base00
+phpMemberSelector          base05  base00
+phpParent                  base05  base00
+pythonOperator             base0E  base00
+pythonRepeat               base0E  base00
+rubyAttribute              base0D  base00
+rubyConstant               base0A  base00
+rubyInterpolation          base0B  base00
+rubyInterpolationDelimiter base0F  base00
+rubyRegexp                 base0C  base00
+rubyStringDelimiter        base0B  base00
+rubySymbol                 base0B  base00
+rustAttribute              base07  base00
+rustDerive                 base07  base00
+rustIdentifier             base0A  base00
+rustModPath                base07  base00
+rustSigil                  base07  base00
+sassClassChar              base09  base00
+sassInclude                base0E  base00
+sassMixinName              base0D  base00
+sassMixing                 base0E  base00
+sassidChar                 base08  base00
+; }}}
+
+Variant: 0
+
+; Highlight groups {{{
+Normal                     omit       omit
+Added                      omit       omit
+Bold                       omit       omit
+Boolean                    omit       omit
+Changed                    omit       omit
+Character                  omit       omit
+ColorColumn                omit       omit        reverse
+ColortemplateInfoBg        omit       omit
+ColortemplateInfoFg        omit       omit
+ColortemplateInfoSp        omit       omit
+Comment                    omit       omit        bold
+Conceal                    omit       omit
+Conditional                omit       omit
+Constant                   omit       omit        underline
+Cursor                     omit       omit
+CursorColumn               omit       omit        reverse
+CursorLine                 omit       omit        underline
+CursorLineNr               omit       omit        bold
+Debug                      omit       omit
+Define                     omit       omit
+Delimiter                  omit       omit
+DiffAdd                    omit       omit        bold
+DiffAdded                  omit       omit
+DiffChange                 omit       omit        bold
+DiffDelete                 omit       omit        bold
+DiffFile                   omit       omit
+DiffLine                   omit       omit
+DiffNewFile                omit       omit
+DiffRemoved                omit       omit
+DiffText                   omit       omit        reverse
+Directory                  omit       omit        bold
+Error                      omit       omit        reverse
+ErrorMsg                   omit       omit        standout
+Exception                  omit       omit
+Float                      omit       omit
+FoldColumn                 omit       omit        standout
+Folded                     omit       omit        standout
+Function                   omit       omit
+GitGutterAdd               omit       omit
+GitGutterChange            omit       omit
+GitGutterChangeDelete      omit       omit
+GitGutterDelete            omit       omit
+Identifier                 omit       omit        underline
+Ignore                     omit       omit
+IncSearch                  omit       omit        reverse
+Include                    omit       omit
+Italic                     omit       omit
+Keyword                    omit       omit
+Label                      omit       omit
+LineNr                     omit       omit        underline
+LineNrAbove                omit       omit
+LineNrBelow                omit       omit
+Macro                      omit       omit
+MatchParen                 omit       omit        reverse
+ModeMsg                    omit       omit        bold
+MoreMsg                    omit       omit        bold
+MsgArea                    omit       omit
+NERDTreeDirSlash           omit       omit
+NERDTreeExecFile           omit       omit
+Noise                      omit       omit
+NonText                    omit       omit        bold
+Number                     omit       omit
+Operator                   omit       omit
+Pmenu                      omit       omit
+PmenuSbar                  omit       omit
+PmenuSel                   omit       omit
+PmenuThumb                 omit       omit
+PreProc                    omit       omit        underline
+Question                   omit       omit        standout
+Removed                    omit       omit
+Repeat                     omit       omit
+Search                     omit       omit        reverse
+SignColumn                 omit       omit        standout
+SignifySignAdd             omit       omit
+SignifySignChange          omit       omit
+SignifySignDelete          omit       omit
+Special                    omit       omit        bold
+SpecialChar                omit       omit
+SpecialKey                 omit       omit        bold
+SpellBad                   omit       omit        reverse
+SpellCap                   omit       omit        reverse
+SpellLocal                 omit       omit        underline
+SpellRare                  omit       omit        reverse
+Statement                  omit       omit        bold
+StatusLine                 omit       omit        bold,reverse
+StatusLineNC               omit       omit        reverse
+StatusLineTerm             omit       omit        bold,reverse
+StatusLineTermNC           omit       omit        reverse
+StorageClass               omit       omit
+String                     omit       omit
+Structure                  omit       omit
+TabLine                    omit       omit        underline
+TabLineFill                omit       omit        reverse
+TabLineSel                 omit       omit        bold
+Tag                        omit       omit
+Title                      omit       omit        bold
+Todo                       omit       omit        standout
+TooLong                    omit       omit
+ToolbarButton              omit       omit
+ToolbarLine                omit       omit        underline
+Type                       omit       omit        underline
+Typedef                    omit       omit
+Underlined                 omit       omit        underline
+VertSplit                  omit       omit        reverse
+Visual                     omit       omit
+VisualNOS                  omit       omit        bold,underline
+WarningMsg                 omit       omit        standout
+WildMenu                   omit       omit        standout
+cOperator                  omit       omit
+cPreCondit                 omit       omit
+csAttribute                omit       omit
+csClass                    omit       omit
+csContextualStatement      omit       omit
+csModifier                 omit       omit
+csNewDecleration           omit       omit
+csType                     omit       omit
+csUnspecifiedStatement     omit       omit
+cssBraces                  omit       omit
+cssClassName               omit       omit
+cssColor                   omit       omit
+gitCommitOverflow          omit       omit
+gitCommitSummary           omit       omit
+helpGraphic                omit       omit
+helpLeadBlank              omit       omit
+helpNormal                 omit       omit
+htmlBold                   omit       omit
+htmlEndTag                 omit       omit
+htmlItalic                 omit       omit
+htmlTag                    omit       omit
+javaScript                 omit       omit
+javaScriptBraces           omit       omit
+javaScriptNumber           omit       omit
+jsBuiltins                 omit       omit
+jsClassDefinition          omit       omit
+jsClassFuncName            omit       omit
+jsClassMethodType          omit       omit
+jsExceptions               omit       omit
+jsFuncCall                 omit       omit
+jsFuncName                 omit       omit
+jsFunction                 omit       omit
+jsGlobalNodeObjects        omit       omit
+jsGlobalObjects            omit       omit
+jsOperator                 omit       omit
+jsRegexpString             omit       omit
+jsReturn                   omit       omit
+jsStatement                omit       omit
+jsThis                     omit       omit
+mailEmail                  omit       omit
+mailQuoted1                omit       omit
+mailQuoted2                omit       omit
+mailQuoted3                omit       omit
+mailQuoted4                omit       omit
+mailQuoted5                omit       omit
+mailQuoted6                omit       omit
+mailURL                    omit       omit
+markdownCode               omit       omit
+markdownCodeBlock          omit       omit
+markdownError              omit       omit
+markdownHeadingDelimiter   omit       omit
+phpComparison              omit       omit
+phpMemberSelector          omit       omit
+phpParent                  omit       omit
+pythonOperator             omit       omit
+pythonRepeat               omit       omit
+rubyAttribute              omit       omit
+rubyConstant               omit       omit
+rubyInterpolation          omit       omit
+rubyInterpolationDelimiter omit       omit
+rubyRegexp                 omit       omit
+rubyStringDelimiter        omit       omit
+rubySymbol                 omit       omit
+sassClassChar              omit       omit
+sassInclude                omit       omit
+sassMixinName              omit       omit
+sassMixing                 omit       omit
+sassidChar                 omit       omit
+; }}}
