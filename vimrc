@@ -44,7 +44,7 @@ set wildmenu
 set shiftwidth=4
 &softtabstop = &shiftwidth
 
-colorscheme atelier_forest_light
+colorscheme forestlight
 
 # use ripgrep if it's there
 if executable('rg')
