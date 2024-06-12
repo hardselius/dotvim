@@ -166,10 +166,10 @@ rustModPath               base00  base07
 rustModPathSep            base00  base07
 rustPubScopeDelim         base00  base07
 rustSigil                 base00  base07
-LspDiagInlineError        omit    bright_red
-LspDiagInlineHint         omit    bright_green
-LspDiagInlineInfo         omit    bright_blue
-LspDiagInlineWarning      omit    yellow
+; LspDiagInlineError        omit    bright_red
+; LspDiagInlineHint         omit    bright_green
+; LspDiagInlineInfo         omit    bright_blue
+; LspDiagInlineWarning      omit    yellow
 ; }}}
 
 Include: _tcozero
