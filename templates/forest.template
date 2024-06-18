@@ -1,5 +1,16 @@
-Full name: Forest Light
-Short name: forestlight
+; vim: ft=colortemplate cc=16,23,31 vsts=15,7,8,4
+
+; red     : base08
+; orange  : base09
+; yellow  : base0a
+; green   : base0b
+; cyan    : base0c
+; blue    : base0d
+; violet  : base0e
+; magenta : base0f
+
+Full name: Forest
+Short name: forest
 Author: Martin Hardselius <martin@hardselius.dev>
 
 ; Common linked groups {{{
@@ -13,14 +24,6 @@ SpecialComment            ->  Special
 Background: light
 
 ; Color palette {{{
-; red     : base08
-; orange  : base09
-; yellow  : base0a
-; green   : base0b
-; cyan    : base0c
-; blue    : base0d
-; violet  : base0e
-; magenta : base0f
 Color:  base00          #1b1918  ~
 Color:  base01          #2c2421  ~
 Color:  base02          #68615e  ~
@@ -166,10 +169,158 @@ rustModPath               base00  base07
 rustModPathSep            base00  base07
 rustPubScopeDelim         base00  base07
 rustSigil                 base00  base07
-; LspDiagInlineError        omit    bright_red
-; LspDiagInlineHint         omit    bright_green
-; LspDiagInlineInfo         omit    bright_blue
-; LspDiagInlineWarning      omit    yellow
+; }}}
+
+Include: _tcozero
+
+Background: dark
+
+; Color palette {{{
+Color:  base00          #f1efee  ~
+Color:  base01          #e6e2e0  ~
+Color:  base02          #a8a19f  ~
+Color:  base03          #9c9491  ~
+Color:  base04          #766e6b  ~
+Color:  base05          #68615e  ~
+Color:  base06          #2c2421  ~
+Color:  base07          #1b1918  ~
+Color:  base08          #f22c3f  ~
+Color:  base09          #df5320  ~
+Color:  base0a          #c38418  ~
+Color:  base0b          #7a9726  ~
+Color:  base0c          #3d97b8  ~
+Color:  base0d          #407ee6  ~
+Color:  base0e          #6666ea  ~
+Color:  base0f          #c340f2  ~
+
+Color:  orange          #df5320  ~
+
+Color:  black           #1b1918  ~
+Color:  bright_black    #746c69  ~
+Color:  red             #f22c3f  ~
+Color:  bright_red      #8c1122  ~
+Color:  green           #7a9726  ~
+Color:  bright_green    #3d4919  ~
+Color:  yellow          #c38418  ~
+Color:  bright_yellow   #664115  ~
+Color:  blue            #407ee6  ~
+Color:  bright_blue     #213f78  ~
+Color:  magenta         #c340f2  ~
+Color:  bright_magenta  #662086  ~
+Color:  cyan            #3d97b8  ~
+Color:  bright_cyan     #264858  ~
+Color:  white           #f1efee  ~
+Color:  bright_white    #f1efee  ~
+
+Term colors: black red green yellow blue magenta cyan white
+Term colors: bright_black bright_red bright_green bright_yellow bright_blue bright_magenta bright_cyan bright_white
+
+; }}}
+
+
+Variant: gui 256
+
+; Highlight groups {{{
+Normal            base00  base07
+Added             base0b  base07
+Boolean           base09  base07
+Character         base08  base07
+ColorColumn       base02  base06
+Comment           base04  base07
+Conceal           base0d  base07
+Conditional       base0e  base07
+Constant          base09  base07
+Cursor            base07  base02
+CursorColumn      base02  base06
+CursorLine        base02  base06
+CursorLineNr      base04  base06  gui=bold term=underline
+Debug             base08  base07
+Define            base0e  base07
+Delimiter         base0f  base07
+DiffAdd           base0b  base06
+DiffChange        base04  base06
+DiffDelete        base08  base06  gui=bold
+DiffText          base0d  base06  bold
+Directory         base0d  base07
+Error             base07  base08
+ErrorMsg          base08  base07
+Exception         base08  base07
+Float             base09  base07
+FoldColumn        base0c  base06
+Folded            base04  base06
+Function          base0d  base07
+Identifier        base08  base07
+Ignore            base07  base07
+IncSearch         base06  base09
+Include           base0d  base07
+Keyword           base0e  base07
+Label             base0a  base07
+LineNr            base05  base06
+LineNrAbove       base02  base07
+LineNrBelow       base02  base07
+Macro             base08  base07
+MatchParen        base07  base04
+ModeMsg           base0b  base07  bold
+MoreMsg           base0b  base07  gui=bold
+NonText           base04  base07  gui=bold
+Number            base09  base07
+Operator          base02  base07
+Pmenu             base03  base06
+PmenuSel          base06  base03
+PreProc           base0a  base07
+Question          base0d  base07  gui=bold
+Removed           base08  base07
+Repeat            base0a  base07
+Search            base01  base0a
+SignColumn        base04  base06
+Special           base0c  base07
+SpecialChar       base0f  base07
+SpecialKey        base04  base07
+SpellBad          base02  base07  undercurl
+SpellCap          base02  base07  undercurl
+SpellLocal        base02  base07  undercurl
+SpellRare         base02  base07  undercurl
+Statement         base08  base07  gui=bold
+StatusLine        base03  base05
+StatusLineNC      base04  base06
+StatusLineTerm    base07  base0b  bold
+StatusLineTermNC  base07  base0b
+StorageClass      base0a  base07
+String            base0b  base07
+Structure         base0e  base07
+TabLine           base04  base06
+TabLineFill       base04  base06
+TabLineSel        base0b  base06
+Tag               base0a  base07
+Title             base00  base07  bold
+Todo              base0a  base06  bold
+ToolbarButton     base07  base03  bold
+Type              base0a  base07
+Typedef           base0a  base07
+Underlined        base08  base07  underline
+VertSplit         base07  base07
+VisualNOS         base08  base07  bold,underline
+WarningMsg        base08  base07
+WildMenu          base00  base06
+QuickFixLine      omit    base06  bold
+
+; Other
+
+markdownBold              base0d  base07  bold
+markdownCode              orange  base07
+markdownCodeDelimiter     orange  base07
+markdownHeadingDelimiter  base00  base07
+markdownLink              green   base07
+markdownUrl               green   base07
+rustAttribute             base00  base07
+rustCommentLineDoc        base04  base07
+rustDerive                base00  base07
+rustIdentifier            yellow  base07
+rustMacro                 blue    base07
+rustModPath               base00  base07
+rustModPathSep            base00  base07
+rustPubScopeDelim         base00  base07
+rustSigil                 base00  base07
 ; }}}
 
 Include: _tcozero
