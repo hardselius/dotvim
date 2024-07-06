@@ -14,11 +14,13 @@ Short name: forest
 Author: Martin Hardselius <martin@hardselius.dev>
 
 ; Common linked groups {{{
-CurSearch                 ->  Search
-CursorLineFold            ->  FoldColumn
-CursorLineSign            ->  SignColumn
-PreCondit                 ->  PreProc
-SpecialComment            ->  Special
+CurSearch       -> Search
+CursorLineFold  -> FoldColumn
+CursorLineSign  -> SignColumn
+PreCondit       -> PreProc
+SpecialComment  -> Special
+justBody        -> Normal
+justShebangBody -> Normal
 ; }}}
 
 Background: light
