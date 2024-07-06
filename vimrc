@@ -140,6 +140,7 @@ packadd lsp
 packadd tabular
 packadd vim-colortemplate
 packadd vim-commentary
+packadd vim-just
 packadd vim-repeat
 packadd vim-surround
 packadd vim-terraform
