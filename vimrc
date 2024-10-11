@@ -173,6 +173,7 @@ call LspOptionsSet({
     showDiagInPopup: false,
     showDiagOnStatusLine: true,
     showSignature: false,
+    semanticHighlight: true,
 })
 
 var lspServers: list<dict<any>> = [
