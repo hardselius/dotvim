@@ -171,6 +171,8 @@ rustModPath               base00  base07
 rustModPathSep            base00  base07
 rustPubScopeDelim         base00  base07
 rustSigil                 base00  base07
+rustString                base0b  base07
+rustFoldBraces            base00  base07
 ; }}}
 
 Include: _tcozero
@@ -323,6 +325,8 @@ rustModPath               base00  base07
 rustModPathSep            base00  base07
 rustPubScopeDelim         base00  base07
 rustSigil                 base00  base07
+rustString                base0b  base07
+rustFoldBraces            base00  base07
 ; }}}
 
 Include: _tcozero
