@@ -19,9 +19,6 @@
 [submodule "pack/plugins/opt/tabular"]
 	path = pack/plugins/opt/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "pack/plugins/opt/vim-colors-solarized"]
-	path = pack/plugins/opt/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "pack/plugins/opt/onedark.vim"]
 	path = pack/plugins/opt/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
