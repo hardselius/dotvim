@@ -44,7 +44,8 @@ set wildmenu
 set shiftwidth=4
 &softtabstop = &shiftwidth
 
-colorscheme forest
+g:disable_bg = 1
+colorscheme rosepine_blend
 
 # use ripgrep if it's there
 if executable('rg')
@@ -146,6 +147,7 @@ packadd vim-repeat
 packadd vim-surround
 packadd vim-terraform
 packadd vim-nix
+packadd vim-rose-pine
 
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
