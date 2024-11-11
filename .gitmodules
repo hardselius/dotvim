@@ -34,3 +34,6 @@
 [submodule "pack/plugins/opt/vim-jsonnet"]
 	path = pack/plugins/opt/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet.git
+[submodule "pack/plugins/opt/colorscheme-rose-pine"]
+	path = pack/plugins/opt/colorscheme-rose-pine
+	url = https://github.com/rose-pine/vim.git
