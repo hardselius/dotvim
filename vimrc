@@ -146,7 +146,6 @@ packadd vim-repeat
 packadd vim-surround
 packadd vim-terraform
 packadd vim-nix
-packadd onedark.vim
 
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
