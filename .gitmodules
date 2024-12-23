@@ -31,3 +31,6 @@
 [submodule "pack/plugins/opt/vim-rose-pine"]
 	path = pack/plugins/opt/vim-rose-pine
 	url = git@github.com:hardselius/vim-rose-pine.git
+[submodule "pack/plugins/opt/typst.vim"]
+	path = pack/plugins/opt/typst.vim
+	url = https://github.com/kaarmu/typst.vim.git
