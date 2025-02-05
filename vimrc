@@ -133,7 +133,7 @@ nnoremap <leader>F <scriptcmd>fuzzy.FileTree()<CR>
 nnoremap <leader>G <scriptcmd>fuzzy.GitFile()<CR>
 
 # plugins
-g:netrw_liststyle = 3
+# g:netrw_liststyle = 3
 g:netrw_localrmdir = 'rm -r'
 
 packadd matchit
