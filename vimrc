@@ -136,6 +136,15 @@ nnoremap <leader>G <scriptcmd>fuzzy.GitFile()<CR>
 # g:netrw_liststyle = 3
 g:netrw_localrmdir = 'rm -r'
 
+g:svelte_preprocessor_tags = [
+    {
+	name: 'ts',
+	tag: 'script',
+	as: 'typescript'
+    }
+]
+g:svelte_preprocessors = ['ts']
+
 packadd matchit
 packadd lsp
 packadd tabular
@@ -148,6 +157,7 @@ packadd vim-surround
 packadd vim-terraform
 packadd vim-nix
 packadd vim-rose-pine
+packadd vim-svelte
 
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
@@ -222,7 +232,7 @@ var lspServers: list<dict<any>> = [
 	args: ['start'],
     },
     {
-	name: 'svelte-language-server',
+	name: 'svelteserver',
 	filetype: ['svelte', 'typescript'],
 	env: {
 	    NODE_ENV: 'production'

@@ -34,3 +34,6 @@
 [submodule "pack/plugins/opt/typst.vim"]
 	path = pack/plugins/opt/typst.vim
 	url = https://github.com/kaarmu/typst.vim.git
+[submodule "pack/plugins/opt/vim-svelte"]
+	path = pack/plugins/opt/vim-svelte
+	url = https://github.com/evanleck/vim-svelte.git
