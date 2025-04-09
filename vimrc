@@ -222,8 +222,11 @@ var lspServers: list<dict<any>> = [
 	args: ['start'],
     },
     {
-	name: 'typescript-language-server',
-	filetype: ['javascript', 'typescript'],
+	name: 'svelte-language-server',
+	filetype: ['svelte', 'typescript'],
+	env: {
+	    NODE_ENV: 'production'
+	},
 	args: ['--stdio'],
     },
 ]
