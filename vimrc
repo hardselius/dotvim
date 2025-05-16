@@ -3,7 +3,7 @@ vim9script
 # backup, undo and swap with XDG support
 
 if empty($XDG_CACHE_HOME)
-    $XDG_CACHE_HOME = $HOME .. '/.cache'
+	$XDG_CACHE_HOME = $HOME .. '/.cache'
 endif
 
 set backupdir=$XDG_CACHE_HOME/vim/backup | call mkdir(&backupdir, 'p', 0700)
@@ -41,28 +41,30 @@ set visualbell t_vb=
 set wildcharm=<C-z>
 set wildmenu
 
-set shiftwidth=4
-&softtabstop = &shiftwidth
+set tabstop=4
+set shiftwidth=0
+&softtabstop = &tabstop
+set listchars+=tab:\|\ 
 
 g:disable_bg = 1
 colorscheme rosepine_blend
 
 # use ripgrep if it's there
 if executable('rg')
-    set grepformat=%f:%l:%c:%m
-    set grepprg=rg\ --vimgrep\ --no-heading\ $*
+	set grepformat=%f:%l:%c:%m
+	set grepprg=rg\ --vimgrep\ --no-heading\ $*
 endif
 
 augroup myvimrc
-    autocmd!
-    # automatic location/quickfix window
-    autocmd QuickFixCmdPost [^l]* cwindow
-    autocmd QuickFixCmdPost    l* lwindow
-    autocmd VimEnter            * cwindow
-    autocmd FileType gitcommit nnoremap <buffer> { ?^@@<CR>|nnoremap <buffer> } /^@@<CR>|setlocal iskeyword+=-
-    autocmd CompleteDone * silent! pclose
-    # undo if filter shell command returned an error
-    autocmd ShellFilterPost * if v:shell_error | undo | endif
+	autocmd!
+	# automatic location/quickfix window
+	autocmd QuickFixCmdPost [^l]* cwindow
+	autocmd QuickFixCmdPost    l* lwindow
+	autocmd VimEnter            * cwindow
+	autocmd FileType gitcommit nnoremap <buffer> { ?^@@<CR>|nnoremap <buffer> } /^@@<CR>|setlocal iskeyword+=-
+	autocmd CompleteDone * silent! pclose
+	# undo if filter shell command returned an error
+	autocmd ShellFilterPost * if v:shell_error | undo | endif
 augroup END
 
 # files
@@ -97,7 +99,7 @@ nnoremap [b :<C-U>set background=<C-R>=&background == "dark" ? "light" : "dark"<
 
 # grepping
 def Grep(...args: list<string>): string
-    return system(join([&grepprg] + [expandcmd(join(args, ' '))], ' '))
+	return system(join([&grepprg] + [expandcmd(join(args, ' '))], ' '))
 enddef
 command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
 command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<f-args>)
@@ -113,13 +115,13 @@ command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
 # sudo write
 if executable('sudo')
-    command! W exec 'silent! write !sudo tee % >/dev/null' | edit!
+	command! W exec 'silent! write !sudo tee % >/dev/null' | edit!
 endif
 
 # portable git blame
 def GB(start: number, end: number): list<string>
-    var cmd = "git -C " .. shellescape(expand('%:p:h')) .. " blame -L " .. start .. "," .. end .. " " .. expand('%:t')
-    return systemlist(cmd)
+	var cmd = "git -C " .. shellescape(expand('%:p:h')) .. " blame -L " .. start .. "," .. end .. " " .. expand('%:t')
+	return systemlist(cmd)
 enddef
 command! -range GB echo join(GB(<line1>, <line2>), "\n")
 
@@ -137,11 +139,11 @@ nnoremap <leader>G <scriptcmd>fuzzy.GitFile()<CR>
 g:netrw_localrmdir = 'rm -r'
 
 g:svelte_preprocessor_tags = [
-    {
-	name: 'ts',
-	tag: 'script',
-	as: 'typescript'
-    }
+	{
+		name: 'ts',
+		tag: 'script',
+		as: 'typescript'
+	}
 ]
 g:svelte_preprocessors = ['ts']
 
@@ -161,97 +163,97 @@ packadd vim-svelte
 packadd llama.vim
 
 def OnLspAttach()
-    setlocal omnifunc=LspOmniFunc
-    setlocal tagfunc=lsp#lsp#TagFunc
-    setlocal updatetime=100
+	setlocal omnifunc=LspOmniFunc
+	setlocal tagfunc=lsp#lsp#TagFunc
+	setlocal updatetime=100
 
-    nnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
-    vnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
-    nnoremap <buffer> ga         <cmd>LspCodeAction<CR>
-    nnoremap <buffer> gd         <cmd>LspGotoDefinition<CR>
-    nnoremap <buffer> gs         <cmd>LspSymbolSearch<CR>
-    nnoremap <buffer> gr         <cmd>LspReferences<CR>
-    nnoremap <buffer> gi         <cmd>LspGotoImpl<CR>
-    nnoremap <buffer> <leader>gt <cmd>LspTypeDef<CR>
-    nnoremap <buffer> <leader>R  <cmd>LspRename<CR>
-    nnoremap <buffer> [g         <cmd>LspDiagPrev\|LspDiagCurrent<CR>
-    nnoremap <buffer> ]g         <cmd>LspDiagNext\|LspDiagCurrent<CR>
-    nnoremap <buffer> <leader>k  <cmd>LspHover<CR>
+	nnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
+	vnoremap <buffer> <leader>=  <cmd>LspFormat<CR>
+	nnoremap <buffer> ga         <cmd>LspCodeAction<CR>
+	nnoremap <buffer> gd         <cmd>LspGotoDefinition<CR>
+	nnoremap <buffer> gs         <cmd>LspSymbolSearch<CR>
+	nnoremap <buffer> gr         <cmd>LspReferences<CR>
+	nnoremap <buffer> gi         <cmd>LspGotoImpl<CR>
+	nnoremap <buffer> <leader>gt <cmd>LspTypeDef<CR>
+	nnoremap <buffer> <leader>R  <cmd>LspRename<CR>
+	nnoremap <buffer> [g         <cmd>LspDiagPrev\|LspDiagCurrent<CR>
+	nnoremap <buffer> ]g         <cmd>LspDiagNext\|LspDiagCurrent<CR>
+	nnoremap <buffer> <leader>k  <cmd>LspHover<CR>
 enddef
 
 call LspOptionsSet({
-    autoComplete: false,
-    noNewLineInCompletion: true,
-    showDiagInPopup: false,
-    showDiagOnStatusLine: true,
-    showSignature: false,
-    semanticHighlight: true,
+	autoComplete: false,
+	noNewLineInCompletion: true,
+	showDiagInPopup: false,
+	showDiagOnStatusLine: true,
+	showSignature: false,
+	semanticHighlight: true,
 })
 
 var lspServers: list<dict<any>> = [
-    {
-	name: 'clangd',
-	filetype: ['c', 'cpp'],
-	args: ['--background-index'],
-    },
-    {
-	name: 'clojure-lsp',
-	filetype: ['clojure'],
-	args: [],
-    },
-    {
-	name: 'rust-analyzer',
-	filetype: ['rust'],
-	args: [],
-	syncInit: true,
-    },
-    {
-	name: 'jsonnet-language-server',
-	filetype: ['jsonnet', 'libsonnet'],
-	args: [],
-    },
-    {
-	name: 'vim-language-server',
-	filetype: ['vim'],
-	args: ['--stdio'],
-    },
-    {
-	name: 'nil',
-	filetype: ['nix'],
-	args: [],
-	initializationOptions: {
-	    nil: {
-		formatting: {
-		    command: ['nixpkgs-fmt']
-		}
-	    }
-	}
-    },
-    {
-	name: 'bash-language-server',
-	filetype: ['bash', 'sh'],
-	args: ['start'],
-    },
-    {
-	name: 'svelteserver',
-	filetype: ['svelte', 'typescript'],
-	env: {
-	    NODE_ENV: 'production'
+	{
+		name: 'clangd',
+		filetype: ['c', 'cpp'],
+		args: ['--background-index'],
 	},
-	args: ['--stdio'],
-    },
+	{
+		name: 'clojure-lsp',
+		filetype: ['clojure'],
+		args: [],
+	},
+	{
+		name: 'rust-analyzer',
+		filetype: ['rust'],
+		args: [],
+		syncInit: true,
+	},
+	{
+		name: 'jsonnet-language-server',
+		filetype: ['jsonnet', 'libsonnet'],
+		args: [],
+	},
+	{
+		name: 'vim-language-server',
+		filetype: ['vim'],
+		args: ['--stdio'],
+	},
+	{
+		name: 'nil',
+		filetype: ['nix'],
+		args: [],
+		initializationOptions: {
+			nil: {
+				formatting: {
+					command: ['nixpkgs-fmt']
+				}
+			}
+		}
+	},
+	{
+		name: 'bash-language-server',
+		filetype: ['bash', 'sh'],
+		args: ['start'],
+	},
+	{
+		name: 'svelteserver',
+		filetype: ['svelte', 'typescript'],
+		env: {
+			NODE_ENV: 'production'
+		},
+		args: ['--stdio'],
+	},
 ]
 
 var servers: list<dict<any>> = []
 
 def RegisterLspServers()
-    for server in lspServers
-	var path = exepath(server.name)
-	if path != ""
-	    server.path = path
-	    add(servers, server)
-	endif
-    endfor
+	for server in lspServers
+		var path = exepath(server.name)
+		if path != ""
+			server.path = path
+			add(servers, server)
+		endif
+	endfor
 enddef
 
 call RegisterLspServers()
@@ -259,6 +261,6 @@ call RegisterLspServers()
 call LspAddServer(servers)
 
 augroup LSP
-    autocmd!
-    autocmd User LspAttached call OnLspAttach()
+	autocmd!
+	autocmd User LspAttached call OnLspAttach()
 augroup END
