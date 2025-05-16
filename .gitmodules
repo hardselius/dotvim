@@ -37,3 +37,6 @@
 [submodule "pack/plugins/opt/vim-svelte"]
 	path = pack/plugins/opt/vim-svelte
 	url = https://github.com/evanleck/vim-svelte.git
+[submodule "pack/plugins/opt/llama.vim"]
+	path = pack/plugins/opt/llama.vim
+	url = https://github.com/ggml-org/llama.vim.git

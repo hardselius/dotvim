@@ -158,6 +158,7 @@ packadd vim-terraform
 packadd vim-nix
 packadd vim-rose-pine
 packadd vim-svelte
+packadd llama.vim
 
 def OnLspAttach()
     setlocal omnifunc=LspOmniFunc
