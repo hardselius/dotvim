@@ -197,20 +197,10 @@ var lspServers: list<dict<any>> = [
 		args: ['--background-index'],
 	},
 	{
-		name: 'clojure-lsp',
-		filetype: ['clojure'],
-		args: [],
-	},
-	{
 		name: 'rust-analyzer',
 		filetype: ['rust'],
 		args: [],
 		syncInit: true,
-	},
-	{
-		name: 'jsonnet-language-server',
-		filetype: ['jsonnet', 'libsonnet'],
-		args: [],
 	},
 	{
 		name: 'vim-language-server',
@@ -235,11 +225,8 @@ var lspServers: list<dict<any>> = [
 		args: ['start'],
 	},
 	{
-		name: 'svelteserver',
-		filetype: ['svelte', 'typescript'],
-		env: {
-			NODE_ENV: 'production'
-		},
+		name: 'basedpyright',
+		filetype: ['python'],
 		args: ['--stdio'],
 	},
 ]
