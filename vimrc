@@ -58,9 +58,9 @@ endif
 augroup myvimrc
 	autocmd!
 	# automatic location/quickfix window
-	autocmd QuickFixCmdPost [^l]* cwindow
-	autocmd QuickFixCmdPost    l* lwindow
-	autocmd VimEnter            * cwindow
+	autocmd QuickFixCmdPost [^l]* botright cwindow
+	autocmd QuickFixCmdPost    l* botright lwindow
+	autocmd VimEnter            * botright cwindow
 	autocmd FileType gitcommit nnoremap <buffer> { ?^@@<CR>|nnoremap <buffer> } /^@@<CR>|setlocal iskeyword+=-
 	autocmd CompleteDone * silent! pclose
 	# undo if filter shell command returned an error
