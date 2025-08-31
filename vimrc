@@ -46,9 +46,6 @@ set shiftwidth=0
 &softtabstop = &tabstop
 set listchars+=tab:\|\ 
 
-g:disable_bg = 1
-colorscheme rosepine_blend
-
 # use ripgrep if it's there
 if executable('rg')
 	set grepformat=%f:%l:%c:%m
@@ -152,14 +149,10 @@ packadd lsp
 packadd tabular
 packadd vim-colortemplate
 packadd vim-commentary
-packadd vim-jsonnet
 packadd vim-just
 packadd vim-repeat
 packadd vim-surround
-packadd vim-terraform
 packadd vim-nix
-packadd vim-rose-pine
-packadd vim-svelte
 packadd llama.vim
 
 def OnLspAttach()

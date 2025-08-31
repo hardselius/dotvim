@@ -13,9 +13,6 @@
 [submodule "pack/plugins/opt/vim-repeat"]
 	path = pack/plugins/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "pack/plugins/opt/vim-terraform"]
-	path = pack/plugins/opt/vim-terraform
-	url = https://github.com/hashivim/vim-terraform.git
 [submodule "pack/plugins/opt/tabular"]
 	path = pack/plugins/opt/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -25,18 +22,9 @@
 [submodule "pack/plugins/opt/vim-just"]
 	path = pack/plugins/opt/vim-just
 	url = https://github.com/NoahTheDuke/vim-just.git
-[submodule "pack/plugins/opt/vim-jsonnet"]
-	path = pack/plugins/opt/vim-jsonnet
-	url = https://github.com/google/vim-jsonnet.git
-[submodule "pack/plugins/opt/vim-rose-pine"]
-	path = pack/plugins/opt/vim-rose-pine
-	url = git@github.com:hardselius/vim-rose-pine.git
 [submodule "pack/plugins/opt/typst.vim"]
 	path = pack/plugins/opt/typst.vim
 	url = https://github.com/kaarmu/typst.vim.git
-[submodule "pack/plugins/opt/vim-svelte"]
-	path = pack/plugins/opt/vim-svelte
-	url = https://github.com/evanleck/vim-svelte.git
 [submodule "pack/plugins/opt/llama.vim"]
 	path = pack/plugins/opt/llama.vim
 	url = https://github.com/ggml-org/llama.vim.git
